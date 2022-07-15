@@ -1,6 +1,6 @@
 from logs.logger import Log
 from appium import webdriver
-from APP.DBmarket_infomation import dbmarket_caps
+from APPinfo.DBmarket_infomation import dbmarket_caps
 
 
 

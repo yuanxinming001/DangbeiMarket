@@ -2,7 +2,7 @@ import uiautomator2
 import unittest, time
 from appium import webdriver
 from selenium.webdriver.common.by import By
-from APP.DBmarket_infomation import dbmarket_caps
+from APPinfo.DBmarket_infomation import dbmarket_caps
 from PublicFunction.Public_board import remotecontrol
 from PublicFunction.Start_app import star_dbmarketapp
 from PublicFunction.Public_parameters import ip, apkname

@@ -5,7 +5,7 @@ from logs.logger import Log
 from appium import webdriver
 from page.dbmarket import homepage, mytab
 from selenium.webdriver.common.by import By
-from APP.DB_market import DBmarket_caps
+from APPinfo.DB_market import DBmarket_caps
 from PublicFunction.Public_board import remotecontrol
 
 

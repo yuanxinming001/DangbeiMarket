@@ -1,6 +1,5 @@
 
 # 一键诊断包信息
-
 akey_diagnostic_caps ={
 
             # 被测设备和设备Android版本

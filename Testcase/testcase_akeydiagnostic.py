@@ -4,7 +4,7 @@ from loguru import logger
 from appium import webdriver
 from page.dbmarket import homepage, mytab
 from selenium.webdriver.common.by import By
-from APP.Akey_diagnostic import akey_diagnostic_caps
+from APPinfo.Akey_diagnostic import akey_diagnostic_caps
 from PublicFunction.Public_board import remotecontrol
 
 
