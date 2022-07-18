@@ -2,7 +2,7 @@ import time
 import unittest
 from loguru import logger
 from appium import webdriver
-from page.dbmarket import homepage, mytab
+from page.dbmarket import home_page, my_tab
 from selenium.webdriver.common.by import By
 from APPinfo.Akey_diagnostic import akey_diagnostic_caps
 from PublicFunction.Public_board import remotecontrol

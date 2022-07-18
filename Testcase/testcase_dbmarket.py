@@ -3,7 +3,7 @@ import unittest
 from loguru import logger
 from logs.logger import Log
 from appium import webdriver
-from page.dbmarket import homepage, mytab
+from page.dbmarket import home_page, my_tab
 from selenium.webdriver.common.by import By
 from APPinfo.DB_market import DBmarket_caps
 from PublicFunction.Public_board import remotecontrol
@@ -24,12 +24,12 @@ class Test_dbmarket(unittest.TestCase):
     def test_01(self):
         driver = self.driver
         time.sleep(5)
-        driver.find_element(By.XPATH, homepage.mytab).click()
+        driver.find_element(By.XPATH, home_page.mytab).click()
         time.sleep(3)
         # 点击影视热播
-        driver.find_element(By.XPATH, mytab.hotav).click()
+        driver.find_element(By.XPATH, my_tab.hotav).click()
         time.sleep(1)
-        gethotav_page_resources_1list = driver.find_element(By.XPATH, mytab.hotav_page_resources_1list)
+        gethotav_page_resources_1list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_1list)
         # 判断是否进入了资源详情页面
         if gethotav_page_resources_1list:
             logger.info('点击我的tab热播影视成功进入资源详情页面')
@@ -41,11 +41,11 @@ class Test_dbmarket(unittest.TestCase):
         driver = self.driver
         time.sleep(2)
         # 进入我的tab页面
-        driver.find_element(By.XPATH, homepage.mytab).click()
+        driver.find_element(By.XPATH, home_page.mytab).click()
         time.sleep(2)
-        gethotav = driver.find_element(By.XPATH, mytab.hotav)
+        gethotav = driver.find_element(By.XPATH, my_tab.hotav)
         time.sleep(2)
-        getprojectlist  = driver.find_element(By.XPATH, mytab.projectlist)
+        getprojectlist  = driver.find_element(By.XPATH, my_tab.projectlist)
         if gethotav and getprojectlist:
             logger.info('我的tab页面热播影视模块和专题榜单模块展示正常')
         else:
@@ -56,9 +56,9 @@ class Test_dbmarket(unittest.TestCase):
         driver = self.driver
         time.sleep(2)
         # 进入我的tab页面
-        driver.find_element(By.XPATH, homepage.mytab).click()
+        driver.find_element(By.XPATH, home_page.mytab).click()
         time.sleep(2)
-        gethavaapp = driver.find_element(By.XPATH, mytab.havaapp)
+        gethavaapp = driver.find_element(By.XPATH, my_tab.havaapp)
         if gethavaapp:
             logger.info('我的tab页面，已安装应用显示正确')
         else:
@@ -69,11 +69,11 @@ class Test_dbmarket(unittest.TestCase):
         driver = self.driver
         time.sleep(3)
         # 进入我的tab页面
-        driver.find_element(By.XPATH, homepage.mytab).click()
+        driver.find_element(By.XPATH, home_page.mytab).click()
         time.sleep(3)
-        driver.find_element(By.XPATH, mytab.havaapp).click()
+        driver.find_element(By.XPATH, my_tab.havaapp).click()
         time.sleep(3)
-        gethavaapp_openpage = driver.find_element(By.XPATH, mytab.havaapp_openpage)
+        gethavaapp_openpage = driver.find_element(By.XPATH, my_tab.havaapp_openpage)
         if gethavaapp_openpage:
             logger.info('我的tab页面，已安装的应用可以正常启动使用')
         else:
@@ -84,24 +84,24 @@ class Test_dbmarket(unittest.TestCase):
         driver = self.driver
         time.sleep(2)
         # 进入我的tab页面 打开热播影视
-        driver.find_element(By.XPATH, homepage.mytab).click()
+        driver.find_element(By.XPATH, home_page.mytab).click()
         time.sleep(2)
-        gethotav = driver.find_element(By.XPATH, mytab.hotav).click()
+        gethotav = driver.find_element(By.XPATH, my_tab.hotav).click()
         time.sleep(3)
-        gethotav_page_resources_1list = driver.find_element(By.XPATH, mytab.hotav_page_resources_1list)
+        gethotav_page_resources_1list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_1list)
         time.sleep(3)
-        gethotav_page_resources_2list = driver.find_element(By.XPATH, mytab.hotav_page_resources_2list)
+        gethotav_page_resources_2list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_2list)
         time.sleep(3)
-        gethotav_page_resources_3list = driver.find_element(By.XPATH, mytab.hotav_page_resources_3list)
-        time.sleep(3)
-        remotecontrol(send='right')
+        gethotav_page_resources_3list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_3list)
         time.sleep(3)
         remotecontrol(send='right')
         time.sleep(3)
         remotecontrol(send='right')
         time.sleep(3)
         remotecontrol(send='right')
-        gethotav_page_resources_4list = driver.find_element(By.XPATH, mytab.hotav_page_resources_4list)
+        time.sleep(3)
+        remotecontrol(send='right')
+        gethotav_page_resources_4list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_4list)
         if gethotav_page_resources_1list and gethotav_page_resources_2list and gethotav_page_resources_3list and gethotav_page_resources_4list:
             logger.info('热播影视模块资源页面：本周电影热播、本周电视剧热播、本周综艺热播、本周动漫热播模块展示正确')
         else:
