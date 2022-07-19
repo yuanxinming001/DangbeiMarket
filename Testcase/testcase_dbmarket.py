@@ -13,22 +13,22 @@ from PublicFunction.Public_board import remotecontrol
 class Test_dbmarket(unittest.TestCase):
 
     def setUp(self) -> None:
-        logger.info('-----------测试开始了----------')
-        self.driver = webdriver.Remote('http://192.168.18.69:4723/wd/hub', DBmarket_caps)
+        logger.info('测试开始了')
+        self.driver = webdriver.Remote('http://192.168.18.95:4723/wd/hub', DBmarket_caps)
 
     def tearDown(self) -> None:
-        logger.info('--------------测试结束了----------------')
+        logger.info('测试结束了')
 
 
     # 检查当贝市场我的tab 热播影视点击可以进入资源详情页面；
     def test_01(self):
         driver = self.driver
-        time.sleep(5)
+        driver.implicitly_wait(5)
         driver.find_element(By.XPATH, home_page.mytab).click()
-        time.sleep(3)
+        driver.implicitly_wait(3)
         # 点击影视热播
         driver.find_element(By.XPATH, my_tab.hotav).click()
-        time.sleep(1)
+        driver.implicitly_wait(3)
         gethotav_page_resources_1list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_1list)
         # 判断是否进入了资源详情页面
         if gethotav_page_resources_1list:
@@ -39,12 +39,12 @@ class Test_dbmarket(unittest.TestCase):
     # 检查我的tab页面热播影视模块和专题榜单模块展示正常
     def test_02(self):
         driver = self.driver
-        time.sleep(2)
+        driver.implicitly_wait(3)
         # 进入我的tab页面
         driver.find_element(By.XPATH, home_page.mytab).click()
-        time.sleep(2)
+        driver.implicitly_wait(3)
         gethotav = driver.find_element(By.XPATH, my_tab.hotav)
-        time.sleep(2)
+        driver.implicitly_wait(3)
         getprojectlist  = driver.find_element(By.XPATH, my_tab.projectlist)
         if gethotav and getprojectlist:
             logger.info('我的tab页面热播影视模块和专题榜单模块展示正常')
@@ -54,52 +54,38 @@ class Test_dbmarket(unittest.TestCase):
     # 检查我的tab页面，存在已安装应用
     def test_03(self):
         driver = self.driver
-        time.sleep(2)
+        driver.implicitly_wait(3)
         # 进入我的tab页面
         driver.find_element(By.XPATH, home_page.mytab).click()
-        time.sleep(2)
+        driver.implicitly_wait(3)
         gethavaapp = driver.find_element(By.XPATH, my_tab.havaapp)
         if gethavaapp:
             logger.info('我的tab页面，已安装应用显示正确')
         else:
             logger.info('error:我的tab页面，没有存在已安装的')
 
-    # 检查我的tab页面，已安装的应用可以正常启动使用
-    def test_04(self):
-        driver = self.driver
-        time.sleep(3)
-        # 进入我的tab页面
-        driver.find_element(By.XPATH, home_page.mytab).click()
-        time.sleep(3)
-        driver.find_element(By.XPATH, my_tab.havaapp).click()
-        time.sleep(3)
-        gethavaapp_openpage = driver.find_element(By.XPATH, my_tab.havaapp_openpage)
-        if gethavaapp_openpage:
-            logger.info('我的tab页面，已安装的应用可以正常启动使用')
-        else:
-            logger.info('error:我的tab页面，已安装的应用启动异常')
 
     # 检查热播影视模块资源页面：本周电影热播、本周电视剧热播、本周综艺热播、本周动漫热播模块展示正确
-    def test_05(self):
+    def test_04(self):
         driver = self.driver
-        time.sleep(2)
+        driver.implicitly_wait(3)
         # 进入我的tab页面 打开热播影视
         driver.find_element(By.XPATH, home_page.mytab).click()
-        time.sleep(2)
+        driver.implicitly_wait(3)
         gethotav = driver.find_element(By.XPATH, my_tab.hotav).click()
-        time.sleep(3)
+        driver.implicitly_wait(3)
         gethotav_page_resources_1list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_1list)
-        time.sleep(3)
+        driver.implicitly_wait(3)
         gethotav_page_resources_2list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_2list)
-        time.sleep(3)
+        driver.implicitly_wait(3)
         gethotav_page_resources_3list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_3list)
-        time.sleep(3)
+        driver.implicitly_wait(3)
         remotecontrol(send='right')
-        time.sleep(3)
+        driver.implicitly_wait(3)
         remotecontrol(send='right')
-        time.sleep(3)
+        driver.implicitly_wait(3)
         remotecontrol(send='right')
-        time.sleep(3)
+        driver.implicitly_wait(3)
         remotecontrol(send='right')
         gethotav_page_resources_4list = driver.find_element(By.XPATH, my_tab.hotav_page_resources_4list)
         if gethotav_page_resources_1list and gethotav_page_resources_2list and gethotav_page_resources_3list and gethotav_page_resources_4list:

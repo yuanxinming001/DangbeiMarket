@@ -14,11 +14,11 @@ from PublicFunction.Public_board import remotecontrol
 class Test_akeydiagonstic(unittest.TestCase):
 
     def setUp(self) -> None:
-        logger.info('-----------测试开始啦----------')
+        logger.info('测试开始')
         self.driver = webdriver.Remote('http://192.168.18.95:4723/wd/hub', akey_diagnostic_caps)
 
     def tearDown(self) -> None:
-        logger.info('--------------测试结束啦----------------')
+        logger.info('测试结束')
 
 
     # 检查打开一键诊断app，二维码和title显示正确
