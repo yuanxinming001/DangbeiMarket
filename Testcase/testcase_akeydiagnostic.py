@@ -27,6 +27,7 @@ class Test_akeydiagonstic(unittest.TestCase):
         driver.implicitly_wait(3)
         get_Network_inthe_diagnosis_of_button = driver.find_element(By.XPATH, Network.Network_inthe_diagnosis_of_button)
         driver.implicitly_wait(10)
+        time.sleep(1)
         get_Network_inthe_diagnosis_of_title = driver.find_element(By.XPATH, Network.Network_inthe_diagnosis_of_title)
         if get_Network_inthe_diagnosis_of_button and get_Network_inthe_diagnosis_of_title:
             logger.info('打开一键诊断app，二维码和title显示正确')
