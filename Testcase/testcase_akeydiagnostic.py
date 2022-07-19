@@ -57,6 +57,16 @@ class Test_akeydiagonstic(unittest.TestCase):
         else:
             logger.info('error: 点击一键诊断button 跳转页面异常')
 
+    # 检查点击日志收集button 跳转页面正确
+    def test_04(self):
+        driver = self.driver
+        time.sleep(5)
+        driver.find_element(By,logget.logget_button).click
+        driver.find_element(By, logget)
+
+
+
+
 
 
 
