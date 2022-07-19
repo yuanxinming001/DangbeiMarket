@@ -1,3 +1,5 @@
+# 发现tab
+
 # 一排资源位置第一个元素(top1:页面第一排。resources：资源内容 one：一排第一个 two就是第二个)
 top1_resources_one = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.ImageView[1]'
 

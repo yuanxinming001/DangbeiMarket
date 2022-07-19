@@ -1,4 +1,4 @@
-
+# 主页面元素
 
 # 我的tab元素
 mytab = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.RelativeLayout/android.widget.ImageView[1]'
