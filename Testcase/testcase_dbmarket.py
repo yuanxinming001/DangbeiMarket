@@ -12,11 +12,11 @@ from PublicFunction.Public_board import remotecontrol
 class Test_dbmarket(unittest.TestCase):
 
     def setUp(self) -> None:
-        logger.info('测试开始了')
         self.driver = webdriver.Remote('http://192.168.18.95:4723/wd/hub', DBmarket_caps)
 
-    def tearDown(self) -> None:
-        logger.info('测试结束了')
+    @classmethod
+    def tearDownClass(cls):
+        logger.info('测试结束')
 
     # 检查当贝市场我的tab 热播影视点击可以进入资源详情页面；
     def test_01(self):
@@ -90,7 +90,6 @@ class Test_dbmarket(unittest.TestCase):
             logger.info('热播影视模块资源页面：本周电影热播、本周电视剧热播、本周综艺热播、本周动漫热播模块展示正确')
         else:
             logger.info('error: 热播影视模块资源页面，资源列表展示异常请检查')
-
 
 
 

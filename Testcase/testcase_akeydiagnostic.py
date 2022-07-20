@@ -1,7 +1,6 @@
 import time
 import pytest
 import unittest
-import allure
 from loguru import logger
 from appium import webdriver
 from page.akeydiagnostic import logget
@@ -21,9 +20,6 @@ class Test_akeydiagonstic(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = webdriver.Remote('http://192.168.18.95:4723/wd/hub', akey_diagnostic_caps)
 
-    @classmethod
-    def tearDownClass(cls):
-        logger.info('测试结束')
 
     # 检查打开一键诊断app，二维码和title显示正确
     def test_01(self):
@@ -129,7 +125,5 @@ class Test_akeydiagonstic(unittest.TestCase):
             logger.info('打开一键诊断app，二维码显示正确')
         else:
             logger.info('error：打开一键诊断app，二维码显示异常，请查看')
-
-
 
 
