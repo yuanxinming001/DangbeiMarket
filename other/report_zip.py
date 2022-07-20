@@ -23,5 +23,3 @@ def zip_file(src_dir, save_name='report'):
             z.write(os.path.join(dirpath, filename), fpath + filename)
     z.close()
     return True
-
-zip_file(src_dir='/Users/yuanxinming/PycharmProjects/DangbeiMarket  /report')
