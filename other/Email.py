@@ -1,8 +1,11 @@
 import smtplib
+import yagmail
 from email.mime.text import MIMEText
 
 
+
 def startmail():
+
     # 登陆邮箱
     sent = smtplib.SMTP()
     sent.connect('smtp.qq.com', 25)
@@ -12,7 +15,7 @@ def startmail():
 
     # 编辑邮件内容
     to = ['yuanxinming@dangbei.com']  # 收件人邮箱地址
-    content = MIMEText('')  # 正文内容
+    content = MIMEText()  # 正文内容
     content['Subject'] = '漂流瓶'  # 邮件标题
     content['From'] = mail_name  # 发件人
     content['To'] = ','.join(to)  # 收件人，用逗号连接多个邮件，实现群发
@@ -27,7 +30,7 @@ def startmail():
 
 
 
-
+startmail()
 
 
 
